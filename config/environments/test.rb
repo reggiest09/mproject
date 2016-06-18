@@ -2,11 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Set the environment variables
-  ENV['CARRIERWAVE_PROVIDER'] = 'AWS'
-  ENV['CARRIERWAVE_ACCESS_KEY'] = 'AKIAJCYBJRQJPYSIJ7PQ'
-  ENV['CARRIERWAVE_SECRET_ACCESS'] = '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'
-  ENV['CARRIERWAVE_REGION'] = 'us-east-1'
-  ENV['CARRIERWAVE_FOG_DIRECTORY'] = '-orchestrano'
+  
 
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that

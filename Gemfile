@@ -14,7 +14,6 @@ gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem 'pry'
-gem 'mysql2', '~> 0.3.13'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -35,10 +34,11 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+gem 'turbolinks', '~> 2.5', '>= 2.5.3'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+gem 'rename'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -87,6 +87,7 @@ gem 'foreman'
 
 # the font-awesome font for the rails asset pipeline
 gem 'font-awesome-rails'
+gem "figaro"
 
 # formtastic and simpleform
 gem 'jasny_bootstrap_extension_rails'

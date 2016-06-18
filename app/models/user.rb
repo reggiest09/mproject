@@ -10,6 +10,13 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  has_many :listings, dependent: :destroy
+
+
+  def confirmation_required?
+  false
+end
+
   def self.from_omniauth(auth)
     where(provider: auth[:provider], uid: auth[:uid]).first_or_initialize.tap do |user|
       user = User.load_user_from_omniauth(user, auth)

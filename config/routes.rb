@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :listings
+  get 'pages/about'
+   get 'seller' => "listings#seller"
+  get 'pages/contact'
+
   # the page root
-  root 'users#edit'
+  root 'listings#index'
 
   # routes for Devise and Omniauth
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
@@ -11,14 +16,15 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   # routes for the API's
-  # namespace :api, defaults: {format: :json} do
-  #   mount TolSkitSessions::Engine => "/"
-  #   mount TolSkitSessionsFacebook::Engine => "sessions/facebook"
-  #   mount TolSkitSessionsTwitter::Engine => "sessions/twitter"
-  #   mount TolSkitSessionsInstagram::Engine => "sessions/instagram"
+    namespace :api, defaults: {format: :json} do
+    mount TolSkitSessions::Engine => "/"
+    mount TolSkitSessionsFacebook::Engine => "sessions/facebook"
+   # mount TolSkitSessionsTwitter::Engine => "sessions/twitter"
+    #mount TolSkitSessionsInstagram::Engine => "sessions/instagram"
     
-  #   resources :users
-  # end
+    resources :users
+    resources :listings
+   end
 
   # routes for locale change
   get 'sessions/:locale', to: "sessions#switch", as: :sessions

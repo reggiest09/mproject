@@ -21,3 +21,6 @@
 .DS_Store
 
 /public/uploads/user/image/*
+
+# Ignore application configuration
+/config/application.yml
