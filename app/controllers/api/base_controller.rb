@@ -2,6 +2,7 @@ module Api
 class BaseController < ApplicationController
   respond_to :json
   before_action :default_json
+  protect_from_forgery with: :null_session
 
   def render_json(view_name)
     render view_name, formats: [:json], 
